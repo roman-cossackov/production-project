@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
 import "./styles/index.scss";
 import { useContext } from "react";
 import { ThemeContext } from "./providers/ThemeProvider/lib/ThemeContext";
 import { Theme } from "./providers/ThemeProvider/lib/ThemeContext";
 import { classNames } from "../shared/lib/classNames/classNames";
+import { Navbar } from "widgets/Navbar";
 
 type Props = {};
 
@@ -20,9 +20,8 @@ const App = (props: Props) => {
 				theme,
 			])}
 		>
+			<Navbar />
 			<button onClick={ToggleTheme}>Toggle</button>
-			<Link to={"/"}>Главная</Link>
-			<Link to={"/about"}>О сайте</Link>
 		</div>
 	);
 };
