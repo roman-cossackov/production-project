@@ -1,5 +1,7 @@
 import "./styles/index.scss";
-import { useContext } from "react";
+import { useContext, Suspense } from "react";
+import { useTranslation } from "react-i18next";
+
 import { ThemeContext } from "./providers/ThemeProvider/lib/ThemeContext";
 import { Theme } from "./providers/ThemeProvider/lib/ThemeContext";
 import { classNames } from "../shared/lib/classNames/classNames";
@@ -8,10 +10,7 @@ import { useTheme } from "./providers/ThemeProvider";
 import { Sidebar } from "widgets/Sidebar";
 import { AppRouter } from "./providers/router";
 
-
-type Props = {};
-
-const App = (props: Props) => {
+const App = () => {
 	const { theme } = useTheme();
 
 	return (
@@ -20,11 +19,13 @@ const App = (props: Props) => {
 				theme,
 			])}
 		>
-			<Navbar />
-			<div className="content-page">
-				<Sidebar />
-				<AppRouter />
-			</div>
+			<Suspense fallback={""}>
+				<Navbar />
+				<div className="content-page">
+					<Sidebar />
+					<AppRouter />
+				</div>
+			</Suspense>
 		</div>
 	);
 };
