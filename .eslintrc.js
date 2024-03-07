@@ -5,7 +5,8 @@ module.exports = {
     },
     "extends": [
         "standard-with-typescript",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "plugin:i18next/recommended"
     ],
     "overrides": [
         {
@@ -25,7 +26,7 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react", "i18next"
     ],
     "rules": {
         "indent": [2, 4],
@@ -43,6 +44,7 @@ module.exports = {
         "react/no-deprecated": "off",
         "@typescript-eslint/ban-ts-comment": "off",
         "@typescript-eslint/prefer-ts-expect-error": "off",
+        "i18next/no-literal-string": ["error", {markupOnly: true}],
     },
     "globals": {
         "__IS__DEV__": true,
