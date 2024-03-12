@@ -1,14 +1,14 @@
-import './styles/index.scss'
-import { Suspense, type FC } from 'react'
+import './styles/index.scss';
+import { Suspense, type FC, useEffect } from 'react';
 
-import { classNames } from '../shared/lib/classNames/classNames'
-import { Navbar } from 'widgets/Navbar'
-import { useTheme } from './providers/ThemeProvider'
-import { Sidebar } from 'widgets/Sidebar'
-import { AppRouter } from './providers/router'
+import { classNames } from '../shared/lib/classNames/classNames';
+import { Navbar } from 'widgets/Navbar';
+import { useTheme } from './providers/ThemeProvider';
+import { Sidebar } from 'widgets/Sidebar';
+import { AppRouter } from './providers/router';
 
 const App: FC = () => {
-    const { theme } = useTheme()
+    const { theme } = useTheme();
 
     return (
         <div className={classNames('app', { hovered: true, selected: false }, [theme])}>
@@ -20,7 +20,7 @@ const App: FC = () => {
                 </div>
             </Suspense>
         </div>
-    )
-}
+    );
+};
 
-export default App
+export default App;

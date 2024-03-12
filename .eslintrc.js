@@ -46,6 +46,8 @@ module.exports = {
         "@typescript-eslint/ban-ts-comment": "off",
         "@typescript-eslint/prefer-ts-expect-error": "off",
         "i18next/no-literal-string": ["error", {markupOnly: true}],
+        "semi": [1, "always"],
+        "@typescript-eslint/semi": [1, "always"],
     },
     "globals": {
         "__IS__DEV__": true,
